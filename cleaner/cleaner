@@ -53,7 +53,7 @@ cleaner() {
   escaped_total_cache=$(printf '%s\n' "${total_cache}" | sed -e 's/[\/&]/\\&/g')
 
   # Use the escaped variable in the sed command
-  sed -Ei "s/^description=(\\[.*][[:space:]]*)?/description=[ 🤩 $current_time | Total cache: ${escaped_total_cache}, Done! The apps cache has been cleaned!! ] /g" "$PROPFILE"
+  sed -Ei "s/^description=(\\[.*][[:space:]]*)?/description=[ $current_time | 🥰 Total cache: ${escaped_total_cache}, Done! The apps cache has been cleaned!! ] /g" "$PROPFILE"
 
   log info "total Cache: ${total_cache}"
   log info "Done! The apps cache has been cleaned!"

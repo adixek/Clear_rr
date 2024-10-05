@@ -7,14 +7,13 @@
 
 It will clean the cache in the following directories:
 ```shell
-    "/data/data/*/cache/*"
-    "/data/data/*/code_cache/*"
-    "/data/user_de/*/*/cache/*"
-    "/data/user_de/*/*/code_cache/*"
-    "/sdcard/Android/data/*/cache/*"
-    "/data/system/dropbox/*"
+  "/data/data/*/cache/*"
+  "/data/data/*/code_cache/*"
+  "/data/user_de/*/*/cache/*"
+  "/data/user_de/*/*/code_cache/*"
+  "/sdcard/Android/data/*/cache/*"
+  "/data/system/dropbox/*"
 ```
-
 If the total reaches 1GB, the checking will be done every 6 hours.
 
 open **/data/adb/cleaner/cleaner.service**,to make changes:
