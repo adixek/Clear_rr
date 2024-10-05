@@ -9,7 +9,6 @@ events=$1
 monitor_dir=$2
 monitor_file=$3
 
-# create folder run
 create_folder_run() {
   if [ ! -d "${folder_run}" ] ; then
     mkdir -p ${folder_run}

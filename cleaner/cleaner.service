@@ -62,7 +62,6 @@ run_otomatis() {
   total=$(du -cs /data/data/*/cache /data/data/*/code_cache /data/user_de/*/*/cache /data/user_de/*/*/code_cache /sdcard/Android/data/*/cache /data/system/dropbox | grep total | cut -f 1 | paste -sd+ | bc)
 
   # Total Cache
-  # Total Cache
   if [ "${total}" -ge 1024 ]; then
       total_cache="$(expr ${total} / 1024) MB"
   else
@@ -81,11 +80,11 @@ run_otomatis() {
     run_cleaner # call the cleaner function
     log info "Done! The apps cache has been cleaned!"
     # Use the escaped variable in the sed command
-    sed -Ei "s/^description=(\\[.*][[:space:]]*)?/description=[ 🥳 $current_time | Total cache: ${escaped_total_cache}, Done! The apps cache has been cleaned! ] /g" "$PROPFILE"
+    sed -Ei "s/^description=(\\[.*][[:space:]]*)?/description=[ $current_time | 🥰 Total cache: ${escaped_total_cache}, Done! The apps cache has been cleaned! ] /g" "$PROPFILE"
   else
     log info "skip cleaning! Cache size is not yet ${size_cache} KB"
     # Use the escaped variable in the sed command
-    sed -Ei "s/^description=(\\[.*][[:space:]]*)?/description=[ 🤩 $current_time | Total cache: ${escaped_total_cache}, Skip cleaning!! ] /g" "$PROPFILE"
+    sed -Ei "s/^description=(\\[.*][[:space:]]*)?/description=[ $current_time | 😍 Total cache: ${escaped_total_cache}, Skip cleaning!! ] /g" "$PROPFILE"
   fi
 
   log info "Have you ever jumped over these bushes?"
