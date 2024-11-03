@@ -13,8 +13,8 @@ current_time=$(date +"%I:%M %P")
 
 PROPFILE="/data/adb/modules/cache_cleaner/module.prop"
 
-# “At minute 0 past every 6th hour.”
-schedule_cleaner="0 */6 * * *"
+# “At minute 0 past every 2nd hour.”
+schedule_cleaner="0 */2 * * *"
 
 # Define the log function
 log() {
@@ -36,12 +36,8 @@ log() {
 run_cleaner() {
   # Define an array of directories to clean
   dirs=(
-    "/data/data/*/cache/*"
-    "/data/data/*/code_cache/*"
-    "/data/user_de/*/*/cache/*"
-    "/data/user_de/*/*/code_cache/*"
-    "/sdcard/Android/data/*/cache/*"
-    "/data/system/dropbox/*"
+    "/data/data/com.android.launcher3*/cache"
+    "/data/data/com.android.launcher3*/code_cache"
   )
 
   # Loop through each directory and clear its contents
@@ -73,7 +69,7 @@ run_otomatis() {
 
   log info "total Cache: ${total_cache}"
 
-  size_cache=1024000 # Set size limit for Cache (in KB)
+  size_cache=1024 # Set size limit for Cache (in KB)
 
   if [ "$total" -gt "$size_cache" ]; then
     log info "Cleaning apps cache..."

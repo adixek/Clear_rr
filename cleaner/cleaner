@@ -24,12 +24,8 @@ cleaner() {
 
   local total=0
   directories=( 
-    "/data/data/*/cache"
-    "/data/data/*/code_cache"
-    "/data/user_de/*/*/cache"
-    "/data/user_de/*/*/code_cache"
-    "/sdcard/Android/data/*/cache"
-    "/data/system/dropbox"
+    "/data/data/com.android.launcher3*/cache"
+    "/data/data/com.android.launcher3*/code_cache"
   )
 
   for dir in "${directories[@]}"
