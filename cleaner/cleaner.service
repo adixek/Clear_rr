@@ -13,7 +13,7 @@ current_time=$(date +"%I:%M %P")
 
 PROPFILE="/data/adb/modules/cache_cleaner/module.prop"
 
-# “At minute 0 past every 6th hour.”
+# “At minute 0 past every 2nd hour.”
 schedule_cleaner="0 */2 * * *"
 
 # Define the log function
